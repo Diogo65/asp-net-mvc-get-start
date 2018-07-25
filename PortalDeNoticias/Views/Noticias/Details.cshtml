@@ -1,0 +1,20 @@
+﻿@model PortalDeNoticias.Models.Noticia
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@Model.Titulo</h2>
+
+@*Verificar se a propriedade é diferente de null, para que nao ocorra erro na aplicação*@
+@if (ViewBag.Mensagem != null)
+{
+    @ViewBag.Mensagem @*Chama a viewBag e imprime a variavel mensagem, pode ser formatada com html e css*@
+}
+
+
+<p>publicado por <strong>@Model.Autor</strong> em <strong>@Model.Data.ToString("dd/mm/yyyy")</strong></p>
+
+<p>@Model.Conteudo</p>
+
+@Html.ActionLink("Voltar", "Index")
